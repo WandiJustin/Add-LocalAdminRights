@@ -31,9 +31,9 @@ function Add-LocalAdminRights {
         $CurrentSystem = (HOSTNAME.EXE)
         If($OSVersion -eq "Windows Server 2012 R2 Standard"){    
             $AdminGroup = [ADSI]("WinNT://$CurrentSystem/Administrators,Group")
-            $AdminGroup.Add("WinNT://gmlu/G_SSV_Server_Local_Admin,Group")
+            $AdminGroup.Add("WinNT://xy/Server_Local_Admin,Group")
         } else {
-    Add-LocalGroupMember -Group "Administrators" -Member "G_SSV_Server_Local_Admin"}
+    Add-LocalGroupMember -Group "Administrators" -Member "Server_Local_Admin"}
         }
     WriteLog "| $server done"
     }
